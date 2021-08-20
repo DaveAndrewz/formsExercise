@@ -13,7 +13,8 @@
         <legend>Customer Experience Survey</legend>
         <div>
           <label for="storeNumber">Store Number</label>
-          <select name="storeNumber" id="storeNumber">
+          <select name="storeNumber" id="storeNumber" placeholder="Select A Store">
+            <option hidden>Select A Store</option>
             <option value="3109">3109</option>
             <option value="2421">2421</option>
             <option value="5357">5357</option>
@@ -23,7 +24,7 @@
           <legend>When you visited:</legend>
           <div>
             <label for="dateVisited">Date Visited</label>
-            <input type="date" name="dateVisited" id="dateVisited" />
+            <input type="date" name="dateVisited" id="dateVisited" min="2021-01-01" max="2021-12-31">
           </div>
           <div>
             <label for="time">Time</label>
@@ -45,7 +46,7 @@
             <label for="gender">Male</label>
           </div>
           <div>
-            <input type="radio" id="gender" name="gender" value="Female" />
+            <input type="radio" id="gender" name="gender" value="Female" checked="checked" />
             <label for="gender">Female</label>
           </div>
         </fieldset>
@@ -58,12 +59,17 @@
     <div>
         <label for="timesVisited">Times visited in the last month:</label>
     </div>
-    <input type="number" name="timesVisited" id="timesVisited"/>
+    <input type="number" name="timesVisited" id="timesVisited" min="1" max="30"/>
     <div>
-        <input type="checkbox" name="experienceContact" id="experienceContact"/>
+        <input type="checkbox" name="experienceContact" id="experienceContact" required/>
         <label for="experienceContact">Please check the box if you would be willing to be contacted about your experience</label>
       </div>
-      <button>Submit</button>
+      <div>
+          <label for="userPassword">Password</label>
+          <input type="password" name="userPassword" id="userPassword" minlength="5" maxlength="10" oninvalid="this.setCustomValidity('Please enter a password that is 5 to 10 characters in length' ">
+      </div>
+      <input type="reset" value="Reset">
+      <input type="submit" value="Submit">
       </fieldset>
     </form>
   </body>
